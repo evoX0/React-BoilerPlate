@@ -1,5 +1,10 @@
 import React from "react";
 
-const App = () => <div>A pure boiler plate for React, with configured Webpack, Babel, SASS and CSS</div>;
+import Some from "./TodoForm/TodoForm";
 
-export { App };
+export const App = () => (
+  <>
+    <Some />
+  </>
+);
+
