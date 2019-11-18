@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 
-const apiUrl = "http://localhost:3001/api/todo/";
+import { UncontrolledTextField } from "./TodoItem";
+
+const apiUrl = "https://node-express-t.herokuapp.com/api/todo";
 
 class Some extends PureComponent {
   constructor(props) {
@@ -8,6 +10,7 @@ class Some extends PureComponent {
     this.state = {
       todos: [],
     };
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
   async componentDidMount() {
@@ -16,23 +19,38 @@ class Some extends PureComponent {
     this.setState({...this.state, todos: todo.data});
   }
 
+  deleteTodo(_id) {
+    const { todos } = this.state;
+    console.log(todos);
+    fetch(`${apiUrl}/${_id}`, {
+      method: "delete",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(data => this.setState({todos: todos.filter(todo => todo._id !== data._id )}))
+      .catch(err => console.error(err));
+  }
+
   mapTodos() {
     const { todos } = this.state;
-    return todos.map(({title, description, id}) => (
-      <ul key={id}>
-        <li>{title}</li>
-        <li>{description}</li>
-      </ul>
+    return todos.map(({title, description, _id}) => (
+      <li key={_id}>
+        { title }: { description }
+        <button style={{marginLeft: 15}} onClick={() => this.deleteTodo(_id)}>delete</button>
+      </li>
     ));
   }
 
   render() {
     return (
      <div>
-       {this.mapTodos()}
+       <ul>{this.mapTodos()}</ul>
+       <UncontrolledTextField />
      </div>
    );
   }
 }
 
-export default Some
+export default Some;
