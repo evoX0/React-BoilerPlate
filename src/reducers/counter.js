@@ -6,7 +6,7 @@ import {
   RESET_COUNTER,
 } from "../constans";
 
-export const counterReducer = ({ type, payload }, state = 0) => {
+export const counterReducer = (state = 0, { type, payload }) => {
   switch (type) {
     case INCREMENT_BY_ONE:
       return state + 1;
