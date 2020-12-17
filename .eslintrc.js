@@ -20,6 +20,8 @@ module.exports = {
   ignorePatterns: ["/node_modules/**", "/build/**"],
   rules: {
     "prettier/prettier": ["error"],
+    "react/jsx-filename-extension": 0,
+    "import/prefer-default-export": 0,
   },
   settings: {
     react: {
