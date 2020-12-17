@@ -1,5 +1,11 @@
 # React-BoilerPlate
-A pure boiler plate for React, with configured Webpack, Babel, SASS and CSS
+A pure boiler plate for React with:
+ - configured Webpack
+ - Babel
+ - Eslint
+ - Prettier
+ - SASS
+ - CSS
 
 To get started you just need to run the following:
 - npm install or yarn
