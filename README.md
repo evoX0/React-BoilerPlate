@@ -8,7 +8,7 @@ A pure boiler plate for React with:
  - CSS
  
  # With Redux
- user  `with-redux` branch
+ use  `with-redux` branch
 
 To get started you just need to run the following:
 - npm install or yarn
