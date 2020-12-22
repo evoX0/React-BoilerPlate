@@ -1,4 +1,3 @@
-import { format } from "path";
 import { combineReducers } from "redux";
 import { counterReducer } from "./counter";
 
