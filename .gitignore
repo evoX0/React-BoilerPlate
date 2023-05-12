@@ -1,4 +1,16 @@
-node_modules
+build/
+
+# Node artifact files
+node_modules/
+public/scripts/
+public/serviceworker/
+.eslintcache
+
+# IDEA
+.git
 .idea
-build
-*.log*
+.DS_Store
+
+# Cypress
+cypress/videos/*
+cypress/screenshots/*

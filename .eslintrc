@@ -1,0 +1,48 @@
+{
+  "extends": ["react-app", "airbnb-base", "prettier", "plugin:cypress/recommended"],
+  "plugins": ["react", "react-hooks", "prettier"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ],
+        "paths": ["src"]
+      }
+    }
+  },
+
+  "rules": {
+    "linebreak-style": 0,
+    "no-restricted-globals": 0,
+    "quotes": ["error", "double", { "avoidEscape": true }],
+    "arrow-parens": ["error", "as-needed"],
+    "import/prefer-default-export": 0,
+    "object-curly-spacing": 2,
+    "prettier/prettier": ["error", { "printWidth": 100 }],
+    "import/extensions": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "import/no-extraneous-dependencies": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "no-continue": "off",
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-useless-escape": "off",
+    "no-console": "off",
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off",
+    "react-hooks/exhaustive-deps": "off"
+  }
+}
